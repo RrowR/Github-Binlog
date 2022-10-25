@@ -12,7 +12,6 @@ import java.io.IOException;
 public class MainBinlog {
     public static void main(String[] args) {
         BinaryLogClient client = new BinaryLogClient("ecs01", 3306, "test", "test");
-        client.setServerId(123454);
         client.registerEventListener(event -> {
             EventData data = event.getData();
             if (data instanceof TableMapEventData) {
